@@ -1,0 +1,224 @@
+{
+	"info": {
+		"_postman_id": "b72b0a69-8cfe-432e-822a-a43d4517301d",
+		"name": "Accenture prueba Técnica",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "12637906"
+	},
+	"item": [
+		{
+			"name": "Franquicias",
+			"item": [
+				{
+					"name": "Obtener franquicias",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/franquicias"
+					},
+					"response": []
+				},
+				{
+					"name": "Crear franquicias",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Franquicia Ejemplo\",\r\n  \"sucursales\": [\r\n    {\r\n      \"nombre\": \"Sucursal A\",\r\n      \"productos\": [\r\n        {\r\n          \"nombre\": \"Producto 1\",\r\n          \"stock\": 100\r\n        },\r\n        {\r\n          \"nombre\": \"Producto 2\",\r\n          \"stock\": 50\r\n        }\r\n      ]\r\n    },\r\n    {\r\n      \"nombre\": \"Sucursal B\",\r\n      \"productos\": [\r\n        {\r\n          \"nombre\": \"Producto 3\",\r\n          \"stock\": 200\r\n        }\r\n      ]\r\n    }\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/franquicias"
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener maximos Stocks por sucursal",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/franquicias/Flamingo/productos/max-stock"
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar nombre Franquicia",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/franquicias/Flamingo?nuevoNombre=D1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"franquicias",
+								"Flamingo"
+							],
+							"query": [
+								{
+									"key": "nuevoNombre",
+									"value": "D1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sucursales",
+			"item": [
+				{
+					"name": "Crear nueva Sucursal",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Sucursal Oeste\",\r\n  \"productos\": [\r\n    {\r\n      \"nombre\": \"Producto 1\",\r\n      \"stock\": 100\r\n    },\r\n    {\r\n      \"nombre\": \"Producto 2\",\r\n      \"stock\": 50\r\n    }\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/Sucursales/franquicia/Flamingo"
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar nombre Sucursal",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Sucursales/franquicia/Éxito/sucursal/Sucursal 1/nuevoNombre?nuevoNombre=Sucursal A4D",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Sucursales",
+								"franquicia",
+								"Éxito",
+								"sucursal",
+								"Sucursal 1",
+								"nuevoNombre"
+							],
+							"query": [
+								{
+									"key": "nuevoNombre",
+									"value": "Sucursal A4D"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Productos",
+			"item": [
+				{
+					"name": "Crear productos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombreProducto\": \"Producto Nuevo\",\r\n  \"stock\": 150,\r\n  \"nombreSucursal\": \"Sucursal A\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/franquicias/Flamingo/sucursales/Sucursal A/productos"
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Stock",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/franquicia/Flamingo/sucursal/Sucursal A/producto/modificarStock/Producto 1?nuevoStock=100",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"franquicia",
+								"Flamingo",
+								"sucursal",
+								"Sucursal A",
+								"producto",
+								"modificarStock",
+								"Producto 1"
+							],
+							"query": [
+								{
+									"key": "nuevoStock",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Nombre producto",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/franquicia/Flamingo/sucursal/Sucursal A/producto/ActualizarNombre/producto 1?nuevoNombre=Chocolatina",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"franquicia",
+								"Flamingo",
+								"sucursal",
+								"Sucursal A",
+								"producto",
+								"ActualizarNombre",
+								"producto 1"
+							],
+							"query": [
+								{
+									"key": "nuevoNombre",
+									"value": "Chocolatina"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar productos",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/franquicias/Flamingo/sucursales/Sucursal A/productos/Producto Nuevo"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
