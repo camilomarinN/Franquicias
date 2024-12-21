@@ -6,5 +6,5 @@ Desarrollo API Franquicias
 - Esta aplicación no tiene configuraciones personalizadas para facilitar su uso, esta se ejecuta en el puerto 8080 y el acceso al SWAGGER UI (documetación de la API) se encuentra en la ruta "http://localhost:8080/swagger-ui/index.html"
 - Se está utilizando como conexión una BD de MongoDB Altlas, la cual posee un acceso de IP publico y el usuario ya se encuentra configurado en el archivo respectivo Application.properties.
 
-#Ejecución
+# Ejecución
 Si los pre requisitos son validados correctamente se puede ejecutar el proyecto simplemente ejecuntando el archivo "FranquiciasApplication" el cual es el ejecutable predeterminado para un proyecto SpringBoot.
